@@ -55,7 +55,8 @@ The code is developed under the following settings:
 - Software: Ubuntu (Version TBD), CUDA>=8.0, Python>=3.5, PyTorch>=0.4.0
 Dependencies: numpy, scipy, opencv, yacs, tqdm
 
-Step 1: Download CARLA Deterministic Data for 4 weathers and ensure that data is in a folder called new_data (1995 images per weather).:
+Step 1: Download CARLA Deterministic Data for 4 weathers (email cv4ad@gmail.com) or run datacollection.py from [cv4ad_CARLA_code](https://github.com/Carleton-Comps-CV4AD/cv4ad_CARLA_code)
+to generatue custom data. Ensure that data is in a folder called new_data. We benchmark on 1995 total images per weather. 
 
 
 Step 2: cd to the main folder
