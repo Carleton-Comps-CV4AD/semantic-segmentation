@@ -75,11 +75,13 @@ To train the model, first run the notebook to create an odgt for the weather sce
 ```bash
 /root/scripts/mixeddatapreprocessing.ipynb
 ```
+Our data existed in a folder called new_data with 96 RGB image folders and 96 corresponding segmentation mask folders for each weather. The script glues RGB folders and segmentation mask folders together into two folders for the specified weathers. It then creates validation, testing, and training splits based on a specified percentage. An odgt file is then created for each and a single line on the odgt contains the file path to the RGB image and the corresponding segmentation mask, along with the width and height of the image. 
+
 Move odgt files to new_data folder. 
 
 Step 5:
 Train our model by selecting the number of ($GPUS) and configuration file ($CFG). During training, checkpoints by default are saved in folder called ckpt.
-Our base configuration files can be found in /root/cfg. Ensure that data directories in configuration files point to where odgt files are located for training and validation. 
+Our base configuration files can be found in /root/cfg. Ensure that the directories in configuration files point to where odgt files are located for training and validation. 
 Example(Train on clear day): 
 ```bash
 python3 train.py --gpu 0 --cfg config/ade20k-hrnetv2-CARLADAYCLEAR.yaml
